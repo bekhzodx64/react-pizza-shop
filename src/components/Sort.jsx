@@ -1,4 +1,20 @@
+import { useState } from 'react';
+
 const Sort = () => {
+	const [open, setOpen] = useState(false);
+	const [selected, setSelected] = useState(0);
+	const lists = ['популярности', 'цене', 'алфавиту'];
+	const sortName = lists[selected];
+
+	const popupHandler = () => {
+		setOpen(!open);
+	};
+
+	const selectedHandler = (index) => {
+		setSelected(index);
+		setOpen(!open);
+	};
+
 	return (
 		<div className='sort'>
 			<div className='sort__label'>
@@ -14,15 +30,22 @@ const Sort = () => {
 					/>
 				</svg>
 				<b>Сортировка по:</b>
-				<span>популярности</span>
+				<span onClick={popupHandler}>{sortName}</span>
 			</div>
-			<div className='sort__popup'>
-				<ul>
-					<li className='active'>популярности</li>
-					<li>цене</li>
-					<li>алфавиту</li>
-				</ul>
-			</div>
+			{open && (
+				<div className='sort__popup'>
+					<ul>
+						{lists.map((list, index) => (
+							<li
+								key={index}
+								onClick={() => selectedHandler(index)}
+								className={selected === index ? 'active' : null}>
+								{list}
+							</li>
+						))}
+					</ul>
+				</div>
+			)}
 		</div>
 	);
 };
