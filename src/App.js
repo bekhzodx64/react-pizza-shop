@@ -9,15 +9,13 @@ const App = () => {
 	return (
 		<div className='wrapper'>
 			<div className='content'>
-				<div className='container'>
-					<Routes>
-						<Route path='/' element={<Layout />}>
-							<Route index element={<Home />} />
-							<Route path='cart' element={<Cart />} />
-							<Route path='*' element={<NotFound />} />
-						</Route>
-					</Routes>
-				</div>
+				<Routes>
+					<Route path='/' element={<Layout />}>
+						<Route index element={<Home />} />
+						<Route path='cart' element={<Cart />} />
+						<Route path='*' element={<NotFound />} />
+					</Route>
+				</Routes>
 			</div>
 		</div>
 	);

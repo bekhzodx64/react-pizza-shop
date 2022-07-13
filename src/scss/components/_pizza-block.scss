@@ -1,20 +1,21 @@
 @import '../variables';
 
 .pizza-block {
-	width: 280px;
+	width: 100%;
 	text-align: center;
-	margin-bottom: 65px;
-
-	&:not(:nth-of-type(4n)) {
-		margin-right: 35px;
+	@media (max-width: 768px) {
+		max-width: 400px;
+		margin: 0 auto;
 	}
 
 	&__image {
+		display: block;
 		width: 260px;
+		margin: 0 auto;
 	}
 
 	&__title {
-		font-size: 20px;
+		font-size: 18px;
 		font-weight: 900;
 		letter-spacing: 1%;
 		margin-bottom: 20px;
