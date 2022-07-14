@@ -7,6 +7,18 @@ body {
 	background-color: $background;
 }
 
+::-webkit-scrollbar {
+	background-color: #fff;
+	width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+	border: 5px solid transparent;
+	background-clip: content-box;
+	border-radius: 200px;
+	background-color: #fe5f1e;
+}
+
 .wrapper {
 	width: calc(100vw - 100px);
 	height: 100%;
@@ -53,6 +65,7 @@ body {
 		align-items: center;
 		justify-content: space-between;
 		gap: 0 20px;
+		padding-top: 20px;
 
 		@media (max-width: 1400px) {
 			.categories {
