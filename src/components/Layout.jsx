@@ -2,10 +2,10 @@ import { Fragment } from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from './Header';
 
-const Layout = () => {
+const Layout = ({ searchValue, setSearchValue }) => {
 	return (
 		<Fragment>
-			<Header />
+			<Header searchValue={searchValue} setSearchValue={setSearchValue} />
 			<Outlet />
 		</Fragment>
 	);
